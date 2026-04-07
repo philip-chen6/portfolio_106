@@ -1,6 +1,113 @@
+:root {
+  --color-accent: oklch(65% 50% 0);
+}
+
 body {
-  /* Set line height to 1.5 times the font size
-	   and use the OS’s UI font as the website font
-	 */
   font: 100%/1.5 system-ui;
+  max-width: 100ch;
+  margin-inline: auto;
+  padding: 1em;
+}
+
+nav {
+  display: flex;
+  margin-bottom: 1em;
+  border-bottom: 1px solid oklch(80% 3% 200);
+}
+
+nav a {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+}
+
+nav a:hover {
+  border-bottom: 0.4em solid var(--color-accent);
+  padding-bottom: calc(0.5em - 0.4em);
+}
+
+nav a.current {
+  border-bottom: 0.4em solid var(--color-accent);
+  padding-bottom: calc(0.5em - 0.4em);
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+}
+
+label {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+  margin-block: 0.5em;
+}
+
+input,
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+button {
+  grid-column: 1 / -1;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em;
+}
+
+.projects article {
+  grid-row: span 3;
+  display: grid;
+  grid-template-rows: subgrid;
+}
+
+.projects article h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 400%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+section h2 {
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 0.25em;
+}
+
+section article {
+  margin-bottom: 1em;
+  padding-left: 1em;
+  border-left: 3px solid oklch(80% 3% 200);
+}
+
+section article time {
+  font-style: italic;
+  color: gray;
 }
