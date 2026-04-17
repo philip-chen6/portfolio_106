@@ -2,6 +2,10 @@
   --color-accent: oklch(65% 50% 0);
 }
 
+html {
+  color-scheme: light dark;
+}
+
 body {
   font: 100%/1.5 system-ui;
   max-width: 100ch;
@@ -10,9 +14,10 @@ body {
 }
 
 nav {
+  --border-color: oklch(50% 10% 200 / 40%);
   display: flex;
   margin-bottom: 1em;
-  border-bottom: 1px solid oklch(80% 3% 200);
+  border-bottom: 1px solid var(--border-color);
 }
 
 nav a {
@@ -26,6 +31,7 @@ nav a {
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: calc(0.5em - 0.4em);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 nav a.current {
@@ -35,7 +41,8 @@ nav a.current {
 
 input,
 textarea,
-button {
+button,
+select {
   font: inherit;
 }
 
@@ -110,4 +117,11 @@ section article {
 section article time {
   font-style: italic;
   color: gray;
+}
+
+label.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
 }
