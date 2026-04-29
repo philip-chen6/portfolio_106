@@ -33,7 +33,9 @@ function updateSelectedClasses() {
 }
 
 function updateProjects() {
-  renderProjects(getMatchingProjects(), projectsContainer, "h2");
+  const matchingProjects = getMatchingProjects();
+  projectsTitle.textContent = `${matchingProjects.length} Projects`;
+  renderProjects(matchingProjects, projectsContainer, "h2");
 }
 
 function renderPieChart(projectsGiven) {
