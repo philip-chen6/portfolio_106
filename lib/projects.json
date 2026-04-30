@@ -12,7 +12,7 @@
     "description": "An AI gaming teammate that joins Discord VC and plays alongside users — 150K+ views across socials. Designed a harness separating macro strategy (every 1-2s) from micro execution (30fps), enabling game-agnostic AI across CS:GO, TFT, and more. Trained custom YOLOv8 for 60fps enemy detection and cut voice latency from 800ms to 400ms."
   },
   {
-    "title": "VIMA",
+    "title": "VIMA (HackTech 2x Winner)",
     "year": "2026",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Visual intelligence for multimodal annotation from egocentric construction footage. Built an auditable spatial memory pipeline that turns hardhat-style video into CII productivity labels, object detections, semantic boxes, masks, depth estimates, spatial zones, and event episodes with cited retrieval. Shipped a hosted dashboard, FastAPI backend, CLI, and MCP server; memory-augmented reasoning improved spatial QA from 0.600 to 0.792 across demo questions."
@@ -70,11 +70,5 @@
     "year": "2024",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Full-stack TypeScript website built at Triton Software Engineering for SpayLA, a nonprofit focused on spay/neuter services. Deployed on Vercel with concurrent frontend/backend dev servers."
-  },
-  {
-    "title": "Placeholder Project",
-    "year": "2022",
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Placeholder description, to be replaced with a real project!"
   }
 ]
