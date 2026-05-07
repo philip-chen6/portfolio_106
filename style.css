@@ -215,3 +215,106 @@ label.color-scheme {
   grid-row: 2;
   margin: 0;
 }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+  gap: 0.75em 1em;
+  margin-block: 1em 2em;
+}
+
+.stats dt {
+  color: color-mix(in oklch, canvastext, canvas 35%);
+  font-size: 0.85em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.stats dd {
+  margin: 0;
+  font-size: 1.35em;
+  font-weight: 650;
+}
+
+#chart {
+  margin-block: 2em;
+}
+
+#chart svg {
+  max-width: 100%;
+}
+
+#chart circle {
+  cursor: pointer;
+  transition: 200ms;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+#chart circle:hover {
+  transform: scale(1.5);
+}
+
+#chart circle.selected {
+  fill: #ff6b6b;
+}
+
+.gridlines line {
+  stroke: color-mix(in oklch, canvastext, canvas 80%);
+  stroke-opacity: 0.45;
+}
+
+.gridlines path {
+  display: none;
+}
+
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25em 0.75em;
+  margin: 0;
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info dt {
+  color: color-mix(in oklch, canvastext, canvas 40%);
+  font-weight: 700;
+}
+
+dl.info dd {
+  margin: 0;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 10;
+  max-width: 18em;
+  padding: 0.75em;
+  border: 1px solid color-mix(in oklch, canvastext, canvas 80%);
+  border-radius: 0.4em;
+  background: color-mix(in oklch, canvas, transparent 8%);
+  box-shadow: 0 0.5em 1.5em color-mix(in oklch, canvastext, transparent 85%);
+  backdrop-filter: blur(0.5em);
+  pointer-events: none;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+.selection {
+  fill: var(--color-accent);
+  fill-opacity: 0.1;
+  stroke: canvastext;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
