@@ -1,0 +1,49 @@
+body {
+  font: 100%/1.5 system-ui, sans-serif;
+  display: flex;
+  flex-flow: column;
+  max-width: 80em;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: auto;
+  padding: 1em;
+}
+
+h1 {
+  margin: 0;
+  font-size: 250%;
+  line-height: 1;
+}
+
+p {
+  margin-block: 0.35em 0;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.time-filter {
+  display: grid;
+  min-width: min(24em, 100%);
+  margin-left: auto;
+  gap: 0.25em;
+}
+
+#time-slider {
+  width: 100%;
+}
+
+#selected-time,
+#any-time {
+  display: block;
+  min-height: 1.5em;
+}
+
+#any-time {
+  color: color-mix(in oklch, canvastext, canvas 45%);
+}

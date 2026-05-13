@@ -91,11 +91,20 @@ export function renderProjects(project, containerElement, headingLevel = "h2") {
   containerElement.innerHTML = "";
   project.forEach((p) => {
     const article = document.createElement("article");
+    const projectUrl = p.url
+      ? p.url.startsWith("http")
+        ? p.url
+        : `${BASE_PATH}${p.url}`
+      : "";
+    const projectLink = p.url
+      ? `<p><a href="${projectUrl}">View project</a></p>`
+      : "";
     article.innerHTML = `
     <${headingLevel}>${p.title}</${headingLevel}>
     <img src="${p.image}" alt="${p.title}">
     <p>${p.description}</p>
     <p><em>c. ${p.year}</em></p>
+    ${projectLink}
     `;
     containerElement.appendChild(article);
   });

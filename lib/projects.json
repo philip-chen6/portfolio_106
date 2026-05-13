@@ -1,5 +1,12 @@
 [
   {
+    "title": "Bikewatching",
+    "year": "2026",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Interactive Mapbox and D3 visualization of Boston-area Bluebikes traffic. Shows Boston and Cambridge bike lanes, station traffic volume by marker size, arrival/departure flow by marker color, and a time-of-day slider for filtering trips.",
+    "url": "bikewatching/"
+  },
+  {
     "title": "Yolodex (OpenAI Codex Hackathon Winner)",
     "year": "2026",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
