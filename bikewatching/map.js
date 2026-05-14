@@ -1,6 +1,7 @@
-import mapboxgl from "https://cdn.jsdelivr.net/npm/mapbox-gl@1.13.3/+esm";
+import mapboxgl from "https://cdn.jsdelivr.net/npm/mapbox-gl@2.15.0/+esm";
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 
+const MAPBOX_ACCESS_TOKEN = "PASTE_YOUR_MAPBOX_PUBLIC_TOKEN_HERE";
 const STATIONS_URL = "https://dsc106.com/labs/lab07/data/bluebikes-stations.json";
 const TRAFFIC_URL = "https://dsc106.com/labs/lab07/data/bluebikes-traffic-2024-03.csv";
 const BOSTON_BIKE_LANES_URL =
@@ -70,27 +71,6 @@ function getCoords(station) {
   return { cx: x, cy: y };
 }
 
-function getMapStyle() {
-  return {
-    version: 8,
-    sources: {
-      osm: {
-        type: "raster",
-        tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
-        tileSize: 256,
-        attribution: "OpenStreetMap contributors",
-      },
-    },
-    layers: [
-      {
-        id: "osm",
-        type: "raster",
-        source: "osm",
-      },
-    ],
-  };
-}
-
 function addBikeLaneLayer(id, data) {
   map.addSource(id, {
     type: "geojson",
@@ -116,11 +96,11 @@ ${station.departures} departures
 ${station.arrivals} arrivals`;
 }
 
-mapboxgl.accessToken = "";
+mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
 
 map = new mapboxgl.Map({
   container: "map",
-  style: getMapStyle(),
+  style: "mapbox://styles/mapbox/streets-v12",
   center: [-71.09415, 42.36027],
   zoom: 12,
   minZoom: 5,
